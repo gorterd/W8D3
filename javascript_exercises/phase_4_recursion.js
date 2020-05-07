@@ -100,31 +100,30 @@
 
 function bsearch(arr, target) {
     if (arr.length === 0){
-        return -1
+        return -1;
     }
     
-    const mid = arr.length/2;
-    console.log(arr.length)
-    console.log(mid)
+    const mid = Math.floor(arr.length/2);
+
 
     if (target < arr[mid]) {
-        return bsearch(arr.slice(0,mid), target)
+        return bsearch(arr.slice(0,mid), target);
     }
     if (target === arr[mid]) {
-        return mid
+        return mid;
     }
     if (target > arr[mid]){
         rightReturn = bsearch(arr.slice(mid+1), target)
         // debugger
         if (rightReturn === -1){
-            return -1
+            return -1;
         } else {
-            return mid + 1 + rightReturn
+            return mid + 1 + rightReturn;
         }
     }
 }
 
-console.log (bsearch([1,2,3,4,5,6,7,8], 4))
+console.log(bsearch([1,2,3,4,5,6,7,8], 9));
 
 
 // mid = arr.length/2
